@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.stocksapplication.network.AppService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.jackson.JacksonConverterFactory
 
 public open class AppApplication:Application() {
     lateinit var service : AppService

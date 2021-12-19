@@ -21,6 +21,9 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+    companion object{
+        const val INTENT_PARCELABLE2 = "OBJECT_INTENT"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,11 +67,15 @@ class LoginActivity : AppCompatActivity() {
                                     override fun onResponse(call: Call<User?>, response: Response<User?>) {
                                         if (response.isSuccessful){
                                             val intent = Intent(this@LoginActivity,StockListActivity::class.java)
+                                            intent.putExtra("token",response.body()!!.token)
+                                            intent.putExtra(INTENT_PARCELABLE2,response.body()!!)
                                             startActivity(intent)
                                             val sharedPreferences = getSharedPreferences("user",Context.MODE_PRIVATE)
                                             val editor = sharedPreferences.edit()
                                             editor.apply(){
                                                 putString("token",response.body()!!.token)
+                                                putString("email",response.body()!!.email)
+                                                putString("memberSince",response.body()!!.memberSince.toString())
                                             }.apply()
                                         }else{
                                             Toast.makeText(applicationContext,"Invalid Email and Password",Toast.LENGTH_SHORT).show()

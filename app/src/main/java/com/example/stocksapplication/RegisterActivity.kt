@@ -47,8 +47,9 @@ class RegisterActivity : AppCompatActivity() {
                         if(TextUtils.isEmpty(password.editText?.text.toString())){
                             Toast.makeText(applicationContext,"Enter Your Input", Toast.LENGTH_SHORT).show()
                         }else{
-                            val userData = Login(email.editText?.text.toString(),password.editText?.text.toString())
+                            //val userData = Login(email.editText?.text.toString(),password.editText?.text.toString())
                             CoroutineScope(Dispatchers.IO).launch {
+                                val userData = Login(email.editText?.text.toString(),password.editText?.text.toString())
                                 val registerApplication = application as AppApplication
                                 val service = registerApplication.service
                                 service.login(userData).enqueue(object : Callback<User?>{
@@ -70,6 +71,7 @@ class RegisterActivity : AppCompatActivity() {
                                                             ) {
                                                                 if(response.isSuccessful){
                                                                     val intent = Intent(this@RegisterActivity,StockListActivity::class.java)
+                                                                    intent.putExtra("token",response.body()!!.token)
                                                                     startActivity(intent)
                                                                     val sharedPreferences = getSharedPreferences("user",
                                                                         Context.MODE_PRIVATE)

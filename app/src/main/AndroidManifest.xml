@@ -14,6 +14,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StocksApplication">
         <activity
+            android:name=".OtherUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyStocksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChangeEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StockPurchaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GetStocksActivity"
+            android:exported="false" />
+        <activity
             android:name=".DrawermenuActivity"
             android:exported="false" />
         <activity
@@ -21,14 +45,14 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
+            android:label="Login"
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
