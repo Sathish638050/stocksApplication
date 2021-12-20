@@ -12,7 +12,6 @@ import com.example.stocksapplication.R
 import com.example.stocksapplication.model.MyStocks
 import com.example.stocksapplication.model.Stocks
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_stocklist_row.view.*
 import kotlinx.android.synthetic.main.ownstock_row_list.view.*
 
 
@@ -24,31 +23,29 @@ class MyStockAdapter(var listData: List<MyStocks>,var listData2:List<Stocks>) : 
 
         fun onItemClick(position: Int)
     }
-    fun setOnItemClickListener(listener : MyStockAdapter.onItemClickListener){
+    fun setOnItemClickListener(listener : onItemClickListener){
         mListener = listener
     }
 
 
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyStockAdapter.MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.ownstock_row_list,parent,false)
         return MyViewHolder(view,mListener)
     }
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.nameTxt.text = listData2[listData[position].stockId].name
+        holder.nameTxt.text = listData2[listData[position].stockId-1].name
         holder.countTxt.text = listData[position].count.toString()+"stocks"
-        holder.priceTxt.text = (listData2[listData[position].stockId].price * listData[position].count).toString()
-        Picasso.get().load(listData2[listData[position].stockId].url).into(holder.urlTxt)
+        holder.priceTxt.text = (listData2[listData[position].stockId-1].price * listData[position].count).toString()
+        Picasso.get().load(listData2[listData[position].stockId-1].url).into(holder.urlTxt)
     }
 
     override fun getItemCount(): Int {
-        return listData?.size!!
+        return listData.size
     }
 
-    class MyViewHolder(view : View,listener: MyStockAdapter.onItemClickListener):RecyclerView.ViewHolder(view) {
+    class MyViewHolder(view : View,listener: onItemClickListener):RecyclerView.ViewHolder(view) {
         val urlTxt : ImageView = view.findViewById(R.id.urlTxt)
         val nameTxt : TextView = view.findViewById(R.id.nameTxt)
         val priceTxt : TextView = view.findViewById(R.id.priceTxt)

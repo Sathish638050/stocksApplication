@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -26,6 +27,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,6 +48,7 @@ class StockListActivity : AppCompatActivity(){
 
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
         supportActionBar?.setCustomView(R.layout.action_bar_layout)
+        this.title = "Sathish"
 
         sharedPreferences = getSharedPreferences("user",Context.MODE_PRIVATE)
 
@@ -89,6 +92,11 @@ class StockListActivity : AppCompatActivity(){
         val drawerllayout : DrawerLayout =findViewById(R.id.drawerLayout)
         val navView: NavigationView =findViewById(R.id.navview)
 
+        val drawerEmail = navView.getHeaderView(0).findViewById<TextView>(R.id.email)
+        drawerEmail.text = "Hi Welcome ${email}"
+
+
+
 
         toggle= ActionBarDrawerToggle(this,drawerllayout,R.string.open,R.string.close)
         drawerllayout.addDrawerListener(toggle)
@@ -96,10 +104,7 @@ class StockListActivity : AppCompatActivity(){
 
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.appicon)
-
-
-
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.drawer_image1)
 
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
@@ -111,9 +116,6 @@ class StockListActivity : AppCompatActivity(){
             }
             true
         }
-
-
-
 
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

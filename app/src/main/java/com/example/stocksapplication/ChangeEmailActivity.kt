@@ -28,6 +28,8 @@ class ChangeEmailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_email)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val email : TextInputLayout = findViewById(R.id.changeEmailLayout)
 
         sharedPreferences = getSharedPreferences("user", MODE_PRIVATE)

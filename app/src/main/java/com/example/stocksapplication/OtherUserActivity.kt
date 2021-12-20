@@ -22,6 +22,7 @@ class OtherUserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_other_user)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE)
 

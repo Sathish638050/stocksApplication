@@ -29,6 +29,8 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE)
         val email : TextView = findViewById(R.id.email)
         val loading =   LoadingItem(this)
@@ -39,14 +41,14 @@ class ProfileActivity : AppCompatActivity() {
         val reviewBtn : Button = findViewById(R.id.reviewBtn)
         var memberSince : String = ""
         val delete : Button = findViewById(R.id.deletebtn)
-        if (userObj != null) {
-            email.text = sharedPreferences.getString("email","")
-            val sdf = SimpleDateFormat("dd MMM yyyy",Locale.ENGLISH)
-            val data : Date = Date(sharedPreferences.getString("memberSince","")!!.toLong())
-            val date :String =  sdf.format(data)
-            memberSince = date
-            member.text = "Member since: "+date.toString()
-        }
+
+        email.text = sharedPreferences.getString("email","")
+        val sdf = SimpleDateFormat("dd MMM yyyy",Locale.ENGLISH)
+        val data : Date = Date(sharedPreferences.getString("memberSince","")!!.toLong())
+        val date :String =  sdf.format(data)
+        memberSince = date
+        member.text = "Member since: "+date.toString()
+
 
         reviewBtn.setOnClickListener {
             loading.startLoading()

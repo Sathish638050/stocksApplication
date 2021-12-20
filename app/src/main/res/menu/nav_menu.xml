@@ -5,16 +5,19 @@
 
     <item
         android:title="Profile"
-        android:id="@+id/profile">
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_person">
     </item>
     <item
         android:title="My Stocks"
-        android:id="@+id/myStock">
+        android:id="@+id/myStock"
+        android:icon="@drawable/ic_grade">
 
     </item>
     <item
         android:title="Other Users"
-        android:id="@+id/otherUsers">
+        android:id="@+id/otherUsers"
+        android:icon="@drawable/ic_others">
     </item>
 
 </menu>

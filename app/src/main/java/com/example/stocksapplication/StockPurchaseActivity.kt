@@ -33,6 +33,8 @@ class StockPurchaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stock_purchase)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val stock = intent.getParcelableExtra<Stocks>(GetStocksActivity.INTENT_PARCELABLE1)
 
         val image : ImageView = findViewById(R.id.proImage)

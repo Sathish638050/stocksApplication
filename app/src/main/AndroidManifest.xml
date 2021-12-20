@@ -14,40 +14,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StocksApplication">
         <activity
-            android:name=".OtherUserActivity"
-            android:exported="false" />
+            android:name=".OtherUserActivity" android:label="Other Users"
+            android:exported="false" android:parentActivityName=".StockListActivity" />
         <activity
-            android:name=".MyStocksActivity"
-            android:exported="false" />
+            android:name=".MyStocksActivity" android:label="Your Stocks"
+            android:exported="false" android:parentActivityName=".StockListActivity" />
         <activity
-            android:name=".DeleteAccountActivity"
-            android:exported="false" />
+            android:name=".DeleteAccountActivity" android:label="Delete Account"
+            android:exported="false" android:parentActivityName=".ProfileActivity"/>
         <activity
-            android:name=".ReviewActivity"
-            android:exported="false" />
+            android:name=".ReviewActivity" android:label="Login History"
+            android:exported="false" android:parentActivityName=".ProfileActivity"/>
         <activity
-            android:name=".ChangeEmailActivity"
-            android:exported="false" />
+            android:name=".ChangeEmailActivity" android:label="Change Email"
+            android:exported="false" android:parentActivityName=".ProfileActivity" />
         <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
+            android:name=".ProfileActivity" android:label="Profile"
+            android:exported="false" android:parentActivityName=".StockListActivity" />
         <activity
-            android:name=".StockPurchaseActivity"
-            android:exported="false" />
+            android:name=".StockPurchaseActivity" android:label="Stock Purchase"
+            android:exported="false" android:parentActivityName=".StockListActivity" />
         <activity
-            android:name=".GetStocksActivity"
-            android:exported="false" />
+            android:name=".GetStocksActivity" android:label="Stock Details"
+            android:exported="false" android:parentActivityName=".StockListActivity" />
         <activity
             android:name=".DrawermenuActivity"
             android:exported="false" />
         <activity
             android:name=".StockListActivity"
+            android:exported="false" android:label="My stocks" />
+        <activity
+            android:name=".LoginActivity" android:label="Login"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
+            android:name=".RegisterActivity" android:label="Register"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"

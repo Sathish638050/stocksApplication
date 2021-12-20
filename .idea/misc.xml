@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Kanini/AndroidProject/app/src/main/res/drawable/custome_image.xml" value="0.12037037037037036" />
         <entry key="..\:/Kanini/AndroidProject/app/src/main/res/drawable/ic_customizebutton.xml" value="0.19583333333333333" />
-        <entry key="..\:/Kanini/AndroidProject/app/src/main/res/layout/action_bar_layout.xml" value="0.1" />
+        <entry key="..\:/Kanini/AndroidProject/app/src/main/res/drawable/ic_lock.xml" value="0.19583333333333333" />
+        <entry key="..\:/Kanini/AndroidProject/app/src/main/res/layout/action_bar_layout.xml" value="0.14666666666666667" />
         <entry key="..\:/Kanini/AndroidProject/app/src/main/res/layout/activity_change_email.xml" value="0.16666666666666666" />
         <entry key="..\:/Kanini/AndroidProject/app/src/main/res/layout/activity_delete_account.xml" value="0.1" />
         <entry key="..\:/Kanini/AndroidProject/app/src/main/res/layout/activity_drawermenu.xml" value="0.1" />

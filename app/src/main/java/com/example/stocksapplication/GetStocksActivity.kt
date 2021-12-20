@@ -23,6 +23,7 @@ class GetStocksActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_stocks)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
         val name : TextView = findViewById(R.id.titleTxt)

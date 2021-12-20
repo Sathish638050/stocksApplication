@@ -28,6 +28,7 @@ class MyStocksActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_stocks)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         sharedPreferences = getSharedPreferences("user",Context.MODE_PRIVATE)
         val loading =   LoadingItem(this)
@@ -40,7 +41,6 @@ class MyStocksActivity : AppCompatActivity() {
                 service.getOwnStock("Bearer $token").enqueue(object :Callback<OwnStocks>{
                     override fun onResponse(call: Call<OwnStocks>, response: Response<OwnStocks>) {
                         if(response.isSuccessful){
-
                             val mystocks = response.body()!!.stockOwnings
                             service.getStocks("Bearer $token").enqueue(object :Callback<AllStocks>{
                                 override fun onResponse(
@@ -81,8 +81,7 @@ class MyStocksActivity : AppCompatActivity() {
                                                         loading.isDismiss()
                                                     }
                                                 }, 3000)
-                                                //Toast.makeText(this@MyStocksActivity,mystocks[position].owningId.toString(),Toast.LENGTH_SHORT).show()
-
+                                                Toast.makeText(this@MyStocksActivity,mystocks[position].owningId.toString(),Toast.LENGTH_SHORT).show()
                                             }
 
                                         })
