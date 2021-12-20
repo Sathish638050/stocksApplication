@@ -48,7 +48,7 @@ class StockListActivity : AppCompatActivity(){
 
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
         supportActionBar?.setCustomView(R.layout.action_bar_layout)
-        this.title = "Sathish"
+       
 
         sharedPreferences = getSharedPreferences("user",Context.MODE_PRIVATE)
 
